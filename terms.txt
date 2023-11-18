@@ -1,0 +1,12 @@
+https://www.prisma.io/dataguide/intro/database-glossary
+
+~Schema
+-A database schema is a structure describing how data should be organized within a database system.
+
+~database migration (migration files) :
+	-controlled sets of changes developed to modify the structure of the objects within a relational database.
+	-Migrations help transition database schemas from their current state to a new desired state,
+		 whether that involves adding tables and columns, removing elements, splitting fields, or changing types and constraints.
+	-we can do these changes manually, why do we use migrations?
+
+
