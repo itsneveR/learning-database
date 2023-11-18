@@ -1,0 +1,3 @@
+~ default user = postgres 
+~ CLI = command "psql"
+
