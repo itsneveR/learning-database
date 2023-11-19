@@ -1,11 +1,13 @@
 ~default port : 5432
 ~ default user = 'postgres' or system name
 ~Before anyone can access the database, you must start the database server
-~after the start you should create a Database Cluster
-~database cluster = a single directory under which all data will be stored.
-~Creating a Database Cluster = 'initdb -D /usr/local/pgsql/data' shell command 
-    -you must execute this command while logged into the PostgreSQL user account
-    -As an alternative to the -D option, you can set the environment variable PGDATA.
+
+
+~to gain remote access you need to modify the 'postgresql.conf'
+    add this line : listen_addresses = '*' 
+~you also need to modift the 'pg_hba.conf' file and give access to ips and users and define suitable identification methods
+
+
 ~service name = 'postgresql' so you can run "systemctl status postgresql"
 ~access the CLI = command "psql"
 ~create a new user in psql= CREATE USER username; 
@@ -13,6 +15,18 @@
 ~create a database = CREATE DATABASE name; or 'createdb dbname' from shell
 ~create a database for someone else = CREATE DATABASE dbname OWNER rolename;
 ~change db owner = ALTER DATABASE db_name OWNER TO new_owner_name;
-~\l = list databases 
+
+~\l - list databases 
+~\c - Connect to database
+~\dn - List schemas
+~\dt - List tables inside public schemas
+~\dt schema1. - List tables inside particular schemas. For eg: 'schema1'. (dont forget the period(.))
+~\d tableName - look into a table 
 
 
+
+~after the start you should create a Database Cluster
+~database cluster = a single directory under which all data will be stored.
+~Creating a Database Cluster = 'initdb -D /usr/local/pgsql/data' shell command 
+    -you must execute this command while logged into the PostgreSQL user account
+    -As an alternative to the -D option, you can set the environment variable PGDATA.
